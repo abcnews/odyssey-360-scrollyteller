@@ -5,7 +5,6 @@ import Sky from '../Sky';
 import styles from './styles.css';
 
 const RADIUS = 20;
-const SKIES_OFFSET_ROTATION = '0 85 0';
 
 let nextID = 0;
 
@@ -55,7 +54,7 @@ export default class Graphic extends Component {
             })
           )}
         </a-assets>
-        <Entity rotation={SKIES_OFFSET_ROTATION}>
+        <Entity>
           {assets.map(({ id, tagName }, index) => (
             <Sky tagName={tagName} src={`#sky-${this.id}-${id}`} radius={RADIUS} isActive={asset === id} />
           ))}
