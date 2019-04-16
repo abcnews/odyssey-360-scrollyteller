@@ -30,9 +30,7 @@ if (module.hot) {
 function init() {
   try {
     scrollyteller = loadOdysseyScrollyteller('interior', 'u-full');
-  } catch (e) {
-    console.error(e);
-  }
+  } catch (e) {}
 
   if (scrollyteller && scrollyteller.mountNode) {
     while (scrollyteller.mountNode.nextElementSibling.tagName === 'A') {
