@@ -1,3 +1,5 @@
+import 'aframe';
+import 'aframe-animation-component';
 import capiFetch from '@abcnews/capi-fetch';
 import { loadOdysseyScrollyteller } from '@abcnews/scrollyteller';
 import { h, render } from 'preact';

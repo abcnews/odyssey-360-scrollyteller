@@ -1,7 +1,0 @@
-html:global(.a-html) {
-  position: static !important;
-}
-
-.loading::before {
-  content: 'Loading…';
-}

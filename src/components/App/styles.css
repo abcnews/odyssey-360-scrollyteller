@@ -1,3 +1,7 @@
+html:global(.a-html) {
+  position: static !important;
+}
+
 .scrollyteller {
   margin-top: 0 !important;
   background-color: #000;
