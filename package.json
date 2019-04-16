@@ -1,6 +1,6 @@
 {
 	"name": "odyssey-interior-scrollyteller",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Use image/video spheres with transitionable focal points as the graphical element of a scrollyteller",
 	"license": "MIT",
 	"private": true,
