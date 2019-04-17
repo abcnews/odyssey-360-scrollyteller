@@ -41,7 +41,7 @@ export default class Sky extends Component {
   }
 
   render() {
-    const { tagName, src, radius, isActive } = this.props;
+    const { tagName, src, radius, yawOffset, isActive } = this.props;
 
     const to = isActive ? 1 : 0;
     const material = this.root.current ? this.root.current.getAttribute('material') : null;
@@ -53,6 +53,8 @@ export default class Sky extends Component {
         primitive={tagName === 'video' ? 'a-videosphere' : 'a-sky'}
         animation__fade={fadeAnimation(from, to)}
         src={src}
+        rotation={`0 ${yawOffset || 0} 0`}
+        // rotation={yawOffset ? { x: 0, y: yawOffset, z: 0 } : null}
         radius={radius}
       />
     );

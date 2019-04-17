@@ -42,8 +42,14 @@ export default class Graphic extends Component {
           )}
         </a-assets>
         <Entity>
-          {assets.map(({ id, tagName }, index) => (
-            <Sky tagName={tagName} src={`#sky-${this.id}-${id}`} radius={RADIUS} isActive={asset === id} />
+          {assets.map(({ id, tagName, yawOffset }, index) => (
+            <Sky
+              tagName={tagName}
+              src={`#sky-${this.id}-${id}`}
+              radius={RADIUS - 0.05 * index}
+              yawOffset={yawOffset}
+              isActive={asset === id}
+            />
           ))}
         </Entity>
         <Camera elevation={+elevation} maxElevation={RADIUS} yaw={+yaw} pitch={+pitch} roll={+roll} />

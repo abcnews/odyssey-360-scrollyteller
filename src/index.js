@@ -57,11 +57,16 @@ const ASSET_TAGNAMES = {
 
 function fetchAssets(panels) {
   return new Promise((resolve, reject) => {
+    const yawOffsets = {};
     const assetCMIDs = panels.reduce((memo, panel) => {
       const assetCMID = panel.config.asset;
 
       if (assetCMID && memo.indexOf(assetCMID) === -1) {
         memo.push(assetCMID);
+
+        const yawOffsetString = String(panel.config.yawoffset || 0);
+
+        yawOffsets[assetCMID] = yawOffsetString.indexOf('n') === 0 ? -1 * yawOffsetString.slice(1) : +yawOffsetString;
       }
 
       return memo;
@@ -94,6 +99,7 @@ function fetchAssets(panels) {
               resolve({
                 id: doc.id,
                 tagName,
+                yawOffset: yawOffsets[doc.id],
                 src
               });
             });
