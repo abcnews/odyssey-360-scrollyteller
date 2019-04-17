@@ -1,3 +1,4 @@
+import './polyfills';
 import 'aframe';
 import 'aframe-animation-component';
 import capiFetch from '@abcnews/capi-fetch';
