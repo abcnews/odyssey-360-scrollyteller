@@ -1,6 +1,6 @@
 {
 	"name": "odyssey-360-scrollyteller",
-	"version": "1.1.1",
+	"version": "1.2.0",
 	"description": "Use 360° image/video spheres with transitionable focal points as the graphical element of a scrollyteller",
 	"license": "MIT",
 	"private": true,
