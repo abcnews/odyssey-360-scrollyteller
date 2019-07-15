@@ -1,6 +1,6 @@
 import { Entity } from 'aframe-react';
 import { h, Component } from 'preact';
-import createRef from 'react-create-ref';
+import { createRef } from '../../utils';
 
 export default class Sky extends Component {
   constructor(props) {

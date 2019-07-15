@@ -1,8 +1,8 @@
 import './polyfills';
 import 'aframe';
 import 'aframe-animation-component';
-import capiFetch from '@abcnews/capi-fetch';
 import { loadOdysseyScrollyteller } from '@abcnews/scrollyteller';
+import terminusFetch from '@abcnews/terminus-fetch';
 import { h, render } from 'preact';
 import App from './components/App';
 
@@ -77,7 +77,7 @@ function fetchAssets(panels) {
       assetCMIDs.map(
         assetCMID =>
           new Promise((resolve, reject) => {
-            capiFetch(assetCMID, (err, doc) => {
+            terminusFetch(assetCMID, (err, doc) => {
               if (err) {
                 return reject(err);
               }
@@ -88,7 +88,12 @@ function fetchAssets(panels) {
                 return reject(new Error(`Unsupported asset type: ${doc.docType}`));
               }
 
-              const renditions = (doc.renditions || doc.media).slice().sort((a, b) => b.width - a.width);
+              const renditions = (doc.docType === 'Video'
+                ? doc.media.video.renditions.files
+                : doc.media.image.primary.complete
+              )
+                .slice()
+                .sort((a, b) => b.width - a.width);
               let src = renditions[0].url;
 
               renditions.slice(1).forEach(x => {
@@ -98,7 +103,7 @@ function fetchAssets(panels) {
               });
 
               resolve({
-                id: doc.id,
+                id: +doc.id,
                 tagName,
                 yawOffset: yawOffsets[doc.id],
                 src
