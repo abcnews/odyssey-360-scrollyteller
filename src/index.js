@@ -1,7 +1,7 @@
 import './polyfills';
 import 'aframe';
 import 'aframe-animation-component';
-import { loadOdysseyScrollyteller } from '@abcnews/scrollyteller';
+import { loadScrollyteller } from '@abcnews/scrollyteller';
 import terminusFetch from '@abcnews/terminus-fetch';
 import { h, render } from 'preact';
 import App from './components/App';
@@ -32,7 +32,7 @@ if (module.hot) {
 
 function init() {
   try {
-    scrollyteller = loadOdysseyScrollyteller('360', 'u-full');
+    scrollyteller = loadScrollyteller('360', 'u-full');
   } catch (e) {}
 
   if (scrollyteller && scrollyteller.mountNode) {
@@ -126,5 +126,5 @@ if (window.__ODYSSEY__) {
 }
 
 if (process.env.NODE_ENV === 'development') {
-  require('preact/devtools');
+  require('preact/debug');
 }
