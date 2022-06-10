@@ -2,9 +2,6 @@ const path = require('path');
 
 module.exports = {
   type: 'preact',
-  build: {
-    addModernJS: true
-  },
   webpack: config => {
     // Stop `import()`-ed chunks from being split into `[name].js` and `vendors~[name].js`
     config.optimization.splitChunks = {

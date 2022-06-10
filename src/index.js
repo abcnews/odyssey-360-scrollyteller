@@ -1,6 +1,7 @@
 import './polyfills';
 import 'aframe';
 import 'aframe-animation-component';
+import { whenOdysseyLoaded } from '@abcnews/env-utils';
 import { loadScrollyteller } from '@abcnews/scrollyteller';
 import terminusFetch from '@abcnews/terminus-fetch';
 import { h, render } from 'preact';
@@ -30,7 +31,7 @@ if (module.hot) {
   });
 }
 
-function init() {
+whenOdysseyLoaded.then(() => {
   try {
     scrollyteller = loadScrollyteller('360', 'u-full');
   } catch (e) {}
@@ -49,10 +50,10 @@ function init() {
         console.error(err);
       });
   }
-}
+});
 
 const ASSET_TAGNAMES = {
-  CustomImage: 'img',
+  Image: 'img',
   Video: 'video'
 };
 
@@ -88,9 +89,8 @@ function fetchAssets(panels) {
                 return reject(new Error(`Unsupported asset type: ${doc.docType}`));
               }
 
-              const renditions = (doc.docType === 'Video'
-                ? doc.media.video.renditions.files
-                : doc.media.image.primary.complete
+              const renditions = (
+                doc.docType === 'Video' ? doc.media.video.renditions.files : doc.media.image.primary.complete
               )
                 .slice()
                 .sort((a, b) => b.width - a.width);
@@ -117,14 +117,4 @@ function fetchAssets(panels) {
         reject(err);
       });
   });
-}
-
-if (window.__ODYSSEY__) {
-  init();
-} else {
-  window.addEventListener('odyssey:api', init);
-}
-
-if (process.env.NODE_ENV === 'development') {
-  require('preact/debug');
 }

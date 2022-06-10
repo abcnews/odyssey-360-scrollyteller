@@ -32,6 +32,14 @@ The following effects are produced by changing the above properties:
 - Changes in `YAW` will result in the shortest distance between the two angles being traversed (330° to 30° will traverse a 60° arc, not 300°)
 - All property changes (except `YAWOFFSET`) are additive. Omitting a property doesn't reset it to its default. You'll have to do that manually when required.
 
+## Developing
+
+Note: `aframe` and `aframe-react` can't be installed with npm as their `package.json`s have faulty `engine` fields that won't let `npm install` run unless you're using Node.js v4.6! To work around this, install using yarn, which can ignore engine requirments:
+
+```
+yarn install --ignore-engines
+```
+
 ## Authors
 
 - Colin Gourlay ([Gourlay.Colin@abc.net.au](mailto:Gourlay.Colin@abc.net.au))

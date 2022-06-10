@@ -17,7 +17,10 @@ export default class App extends Component {
   constructor(props) {
     super(props);
 
-    this.configToStateMap = createCumulatitveStateMap(props.panels.map(panel => panel.config), DEFAULT_STATE);
+    this.configToStateMap = createCumulatitveStateMap(
+      props.panels.map(panel => panel.config),
+      DEFAULT_STATE
+    );
 
     this.onMarker = this.onMarker.bind(this);
   }
