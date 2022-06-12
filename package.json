@@ -1,24 +1,24 @@
 {
-  "name": "odyssey-360-scrollyteller",
-  "version": "2.0.0",
-  "description": "Use 360° image/video spheres with transitionable focal points as the graphical element of a scrollyteller",
-  "license": "MIT",
-  "private": true,
-  "contributors": [
-    "Colin Gourlay <Gourlay.Colin@abc.net.au>"
-  ],
-  "scripts": {
-    "start": "aunty serve"
-  },
-  "devDependencies": {
-    "@abcnews/aunty": "^12.2.0"
-  },
-  "dependencies": {
-    "@abcnews/env-utils": "^3.0.0",
-    "@abcnews/scrollyteller": "^3.0.1",
-    "@abcnews/terminus-fetch": "^4.0.1",
-    "aframe": "1.0.3",
-    "aframe-react": "^4.4.0",
-    "preact": "^10.0.4"
-  }
+	"name": "odyssey-360-scrollyteller",
+	"version": "2.0.1",
+	"description": "Use 360° image/video spheres with transitionable focal points as the graphical element of a scrollyteller",
+	"license": "MIT",
+	"private": true,
+	"contributors": [
+		"Colin Gourlay <Gourlay.Colin@abc.net.au>"
+	],
+	"scripts": {
+		"start": "aunty serve"
+	},
+	"devDependencies": {
+		"@abcnews/aunty": "^12.2.0"
+	},
+	"dependencies": {
+		"@abcnews/env-utils": "^3.0.0",
+		"@abcnews/scrollyteller": "^3.0.1",
+		"@abcnews/terminus-fetch": "^4.0.1",
+		"aframe": "1.0.3",
+		"aframe-react": "^4.4.0",
+		"preact": "^10.0.4"
+	}
 }
