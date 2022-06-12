@@ -1,6 +1,5 @@
 import './polyfills';
 import 'aframe';
-import 'aframe-animation-component';
 import { whenOdysseyLoaded } from '@abcnews/env-utils';
 import { loadScrollyteller } from '@abcnews/scrollyteller';
 import terminusFetch from '@abcnews/terminus-fetch';
