@@ -11,12 +11,12 @@
 		"start": "aunty serve"
 	},
 	"devDependencies": {
-		"@abcnews/aunty": "^12.2.0"
+		"@abcnews/aunty": "^13.2.2"
 	},
 	"dependencies": {
 		"@abcnews/env-utils": "^3.0.0",
 		"@abcnews/scrollyteller": "^3.0.1",
-		"@abcnews/terminus-fetch": "^4.0.1",
+		"@abcnews/terminus-fetch": "^5.0.0",
 		"aframe": "1.0.3",
 		"aframe-react": "^4.4.0",
 		"preact": "^10.0.4"
